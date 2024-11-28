@@ -3,6 +3,24 @@ const Task = require('../models/Task');
 const router = express.Router();
 
 // GET all tasks
+/*router.get('/', async (req, res) => {
+  try {
+    const tasks = await Task.find(); // Fetch all tasks from MongoDB
+    res.json(tasks); // Respond with tasks as JSON
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch tasks' });
+  }
+});
+router.get('/', async (req, res) => {
+  console.log('Incoming GET request:', req.body); // Log the request body
+  try {
+    const tasks = await Task.find();
+    res.json(tasks);
+  } catch (error) {
+    console.error('Error fetching tasks:', error);
+    res.status(500).json({ error: 'Failed to fetch tasks' });
+  }
+});*/
 router.get('/', async (req, res) => {
   try {
     const tasks = await Task.find();
@@ -11,6 +29,7 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch tasks' });
   }
 });
+
 
 // POST a new task
 router.post('/', async (req, res) => {
